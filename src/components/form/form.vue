@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "iForm",
+  name: 'IForm',
   provide() {
     return {
       form: this,
@@ -27,11 +27,11 @@ export default {
   },
 
   created() {
-    this.$on("on-form-item-add", function (field) {
+    this.$on('on-form-item-add', function (field) {
       if (field) this.fields.push(field);
     });
 
-    this.$on("on-form-item-remove", function (field) {
+    this.$on('on-form-item-remove', function (field) {
       if (field.prop) this.fields.splice(this.fields.indexOf(field), 1);
     });
   },
@@ -45,14 +45,14 @@ export default {
         let count = 0;
 
         this.fields.forEach((field) => {
-          field.validate("", (errors) => {
+          field.validate('', (errors) => {
             if (errors) {
               valid = false;
             }
 
             if (++count === this.fields.length) {
               resolve(valid);
-              if (typeof callback === "function") {
+              if (typeof callback === 'function') {
                 callback(valid);
               }
             }

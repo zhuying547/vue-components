@@ -6,25 +6,25 @@
 </template>
 
 <script>
-import Emitter from "@/mixins/emitter";
+import Emitter from '@/mixins/emitter';
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
-  name: "HomeView",
-  mixins: [Emitter],
+  name: 'HomeView',
   components: {
     HelloWorld,
   },
-  methods: {
-    listenClick(val) {
-      console.log("listenClick", val);
-    },
-  },
+  mixins: [Emitter],
   mounted() {
-    this.$on("on-click", (...args) => {
+    this.$on('on-click', (...args) => {
       console.log(args);
     });
+  },
+  methods: {
+    listenClick(val) {
+      console.log('listenClick', val);
+    },
   },
 };
 </script>

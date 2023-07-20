@@ -1,22 +1,17 @@
 <template>
-  <input
-    type="text"
-    :value="currentValue"
-    @input="handleInput"
-    @blur="handleBlur"
-  />
+  <input type="text" :value="currentValue" @input="handleInput" @blur="handleBlur" />
 </template>
 
 <script>
-import Emitter from "../../mixins/emitter";
+import Emitter from '../../mixins/emitter';
 
 export default {
-  name: "iInput",
+  name: 'IInput',
   mixins: [Emitter],
   props: {
     value: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
@@ -32,12 +27,12 @@ export default {
   methods: {
     handleInput(event) {
       const value = event.target.value;
-      this.$emit("input", value);
+      this.$emit('input', value);
       this.currentValue = value;
-      this.dispatch("iFormItem", "on-form-change", value);
+      this.dispatch('iFormItem', 'on-form-change', value);
     },
     handleBlur() {
-      this.dispatch("iFormItem", "on-form-blur", this.currentValue);
+      this.dispatch('iFormItem', 'on-form-blur', this.currentValue);
     },
   },
 };
