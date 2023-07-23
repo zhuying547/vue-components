@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <h1>Vue.js组件</h1>
+    <nav><router-link to="/form">form</router-link> |</nav>
     <router-view />
   </div>
 </template>
