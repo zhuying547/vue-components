@@ -1,30 +1,32 @@
 <template>
-  <div id="app">
-    <h1>Vue.js组件</h1>
-    <nav><router-link to="/form">form</router-link> |</nav>
-    <router-view />
+  <div id="app" class="d-flex flex-column h-100">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item" v-for="route in routes" :key="route.name">
+          <router-link :to="route.path" class="nav-link">{{ route.name }}</router-link>
+        </li>
+      </ul>
+    </header>
+    <main class="flex-shrink-0">
+      <router-view />
+    </main>
+    <footer class="footer mt-auto py-3 bg-body-tertiary">
+      <div class="container">
+        <span class="text-body-secondary">Place sticky footer content here.</span>
+      </div>
+    </footer>
   </div>
 </template>
-
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+import { routes } from './router';
+export default {
+  name: 'App',
+  data() {
+    return {
+      routes: routes,
+    };
+  },
+  components: {},
+};
+</script>
+<style lang="less"></style>

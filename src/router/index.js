@@ -3,19 +3,17 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const routes = [
+export const routes = [
   {
     path: '/',
-    redirect: { path: '/form' },
-  },
-  {
-    path: '/form',
+    name: 'form',
     component: () => import('@/views/form.vue'),
   },
 ];
 
 const router = new VueRouter({
   routes,
+  linkActiveClass: 'active',
 });
 
 export default router;
