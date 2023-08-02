@@ -10,7 +10,7 @@
     <main class="flex-shrink-0">
       <router-view />
     </main>
-    <footer class="footer mt-auto py-3 bg-body-tertiary">
+    <footer class="footer bg-body-tertiary mt-auto py-3">
       <div class="container">
         <span class="text-body-secondary">Place sticky footer content here.</span>
       </div>
@@ -29,4 +29,14 @@ export default {
   components: {},
 };
 </script>
-<style lang="less"></style>
+
+<style>
+.image {
+  background-image: url(./assets/logo.png);
+}
+@media (min-resolution: 2dppx) {
+  .image {
+    background-image: url(./assets/logo.png);
+  }
+}
+</style>
