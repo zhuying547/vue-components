@@ -1,19 +1,16 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-
-Vue.use(VueRouter);
+import { createRouter, createWebHistory } from 'vue-router'
 
 export const routes = [
   {
     path: '/',
     name: 'form',
-    component: () => import('@/views/form.vue'),
-  },
-];
-
-const router = new VueRouter({
+    component: () => import('@/views/form.vue')
+  }
+]
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  linkActiveClass: 'active',
-});
+  linkActiveClass: 'active'
+})
 
-export default router;
+export default router
