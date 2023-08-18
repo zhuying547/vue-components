@@ -3,23 +3,21 @@
 ## Project setup
 
 ```
-npm install
+pnpm install
 ```
 
 ### Compiles and hot-reloads for development
 
 ```
-npm run serve
+pnpm dev
 ```
 
 ### Compiles and minifies for production
 
 ```
-npm run build
+pnpm build
 ```
 
 ### Customize configuration
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
+See [Configuration Reference](https://cn.vitejs.dev/config/).
