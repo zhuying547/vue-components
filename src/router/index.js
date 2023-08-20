@@ -5,6 +5,10 @@ export const routes = [
     path: '/',
     name: 'form',
     component: () => import('@/views/form.vue')
+  },
+  {
+    path: '/button',
+    component: () => import('@/views/button.vue')
   }
 ]
 const router = createRouter({
