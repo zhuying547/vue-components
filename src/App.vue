@@ -18,15 +18,15 @@
   </div>
 </template>
 <script>
-import { routes } from './router';
+import { routes } from './router'
 export default {
   name: 'App',
   data() {
     return {
-      routes: routes,
-    };
+      routes: routes
+    }
   },
-  components: {},
-};
+  components: {}
+}
 </script>
 <style lang="less"></style>
